@@ -10,7 +10,7 @@ body {
   background: #232323;
 }
 div {
-  height: 200px;
+  height: 300px;
   background-size: cover;
   position: relative;
   margin: 40px 0 0 0;
@@ -36,7 +36,7 @@ p {
   background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
   padding: 10px;
   line-height: 28px;
-  text-align: justify;
+  text-align: center;
   position: absolute;
   bottom: 0;
   margin: 0;
@@ -58,18 +58,19 @@ small {
   opacity: 1;
 }
 
-.first{
-  background-image: url("http://dash.ga.co/assets/firstcourse.jpg");
-}
-.second{
-  background-image: url("http://dash.ga.co/assets/secondcourse.jpg");
-}
-.dessert{
-  background-image: url("http://dash.ga.co/assets/dessertcourse.jpg");
-}
+
 .price {
   float: right;
 }
+    ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
 @media (max-width: 500px) {
   h1 {
     font-size: 50px;
@@ -97,24 +98,113 @@ small {
 </head>
 
 <body>
-<h1>Lina's Paradice</h1>
-<h2>a New York City eatery</h2>
-<div class="first">
-  <p>welsh onion soko <span class="price">$14</span><br />
-  <small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p>
-</div>
+<ul>
+      <li><button onclick=Appetizers()>Appetizers</button></li>
+      <li><button onclick=Food()>Food</button></li>
+      <li><button onclick=Drinks()>Drinks</button></li>
+    </ul>
 
-<div class="second">
-  <p>pastrami boudin tongue <span class="price">$22</span><br />
-  <small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p>
-</div>
-  
-<div class="dessert">
-  <p>fruitcake marzipan pudding dragee <span class="price">$8</span><br />
-  <small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p>
-</div>
+<h1>Lina's Paradice</h1>
+<h2>The best Restaurant to have a family dinner.</h2>
+
+<div id="lina"> </div>
+
+
+
 
 <script>
+
+
+AppetizersImages = [
+    'url("https://i.vimeocdn.com/video/548269931_1280x720.jpg',
+    'url("http://www.thecherryshare.com/pictures/880677367coconut-oven-fried-chicken-salad-honey-mustard-vinaigrette.jpg")',
+    'url("http://media.foodnetwork.ca/recipetracker/e5e6a7d3-6351-4076-b2ea-57388ec27752_seared-scallops-ginger-carrot-puree-apricot-caper-salsa_WebReady.jpg")',
+]
+  AppetizersDivs = [
+       '<div class="item" onclick=this.classList.toggle("show-description><p>La Gaufrette<span class="price">$10</span><br /><small> Whether it is a corporate event, family celebration or gala dinner, La Gaufrette will provide exceptional service and will exceed your standards. Satisfaction guaranteed. La Gaufrette also offers a whole range of canapés, pastries and cakes to delight your invitees.. </small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description><p>Chicken with Honey Sauce<span class="price">$9</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description><p>Seared Scallops with Ginger Carrot Purée and Apricot Caper Salsa<span class="price">$5</span><br /><small>The apricot and caper salsa here would be great on any fish you might be grilling this summer as well. So, if you’re planking some salmon on the barbecue, try throwing a spoonful or two on top before serving.</small></p></div>',
+]
+ 
+
+FoodsImages = [
+				'url("http://forksandfolly.com/wp-content/uploads/2017/07/family-chinese-dinner-at-home-10.jpg")',
+				'url("https://media-cdn.tripadvisor.com/media/photo-s/0b/df/32/28/nyc-chicken-over-rice.jpg")',
+				'url("https://www.thespruceeats.com/thmb/WixIrwNSTTvtWLVC5uMzHTRwK60=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/10104859975_32d03979a3_o-56a143273df78cf77268f39e.jpg")',
+]
+
+FoodsDivs = [
+       '<div class="item" onclick=this.classList.toggle("show-description><p>Chicken Teriyaki With Veggie Fried Rice<span class="price">$17</span><br /><small>This chicken teriyaki with veggie fried rice is easier than calling for takeout, and dare i say, better?  make this delicious dinner and serve it up with chopsticks for an evening of family fun!  recipe and post included as part of the popular.</small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description><p>Chicken Over Rice<span class="price">$6</span><br /><small>This utterly faithful recipe perfectly recreates a New York City halal-cart classic: Chicken and Rice with White Sauce . The chicken is marinated with herbs, lemon, and spices; the rice golden; the sauce, as white and creamy as ever.</small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description><p>Chicken Fried Rice with Onions and Peas<span class="price">$15</span><br /><small>Chicken fried rice is a great way to use leftovers. Like all fried rice dishes, chicken fried rice tastes best when using leftover cooked rice.</small></p></div>',
+]
+
+DrinksImages = [
+				'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmZRj36oUeywX6Auo12jMdFxU-3IKdhHxHi0VNOyLqAUm4coy")',
+				'url("https://img.buzzfeed.com/buzzfeed-static/static/2014-12/31/10/campaign_images/webdr07/21-fancy-drinks-to-help-you-forget-2014-2-23716-1420038900-16_dblbig.jpg")',
+				'url("https://cdn2.momjunction.com/wp-content/uploads/2015/04/Mango-Frappe.jpg")',
+]
+
+DrinksDivs = [
+       '<div class="item" onclick=this.classList.toggle("show-description")><p>French Martini<span class="price">$6</span><br /><small>Our French Martini is one of the best of the new breed (but no Gin, no Vermouth) The mix of raspberry and pineapple flavours is truly delicious.</small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description")><p>Raspberry Sgroppino<span class="price">$10</span><br /><small>its a delicious frosty fruit sorbet that really wants to party with you, You can use any flavor of sorbet if raspberry isnt your thing.</small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description><p>Mocktails<span class="price">$6</span><br /><small>Planning drinks for adults is no biggie, but selecting non-alcoholic beverages for your kids and their friends can give you a tough time. You don’t have to worry any more as we have come up with the tasty and easy to make mocktails for kids.</small></p></div>',
+]
+
+
+function Appetizers() {
+lina = document.getElementById("lina")
+lina.innerHTML = ''
+lina.innerHTML += AppetizersDivs[0]
+lina.innerHTML += AppetizersDivs[1]
+lina.innerHTML += AppetizersDivs[2]
+ //alert(hunhbn-)
+ items = document.getElementsByClassName("item")
+	items[0].style.background = AppetizersImages[0]
+  items[0].style.backgroundSize = '100% 100%'
+  items[1].style.background = AppetizersImages[1]
+  items[1].style.backgroundSize = '100% 100%'
+  items[2].style.background = AppetizersImages[2]
+  items[2].style.backgroundSize = '100% 100%'
+} 
+
+
+function Food() {
+lina = document.getElementById("lina")
+lina.innerHTML = ''
+lina.innerHTML += FoodsDivs[0]
+lina.innerHTML += FoodsDivs[1]
+lina.innerHTML += FoodsDivs[2]
+ //alert(fgrg-)
+ items = document.getElementsByClassName("item")
+	items[0].style.background = FoodsImages[0]
+  items[0].style.backgroundSize = '100% 100%'
+  items[1].style.background = FoodsImages[1]
+  items[1].style.backgroundSize = '100% 100%'
+  items[2].style.background = FoodsImages[2]
+  items[2].style.backgroundSize = '100% 100%'
+} 
+
+
+function Drinks() {
+lina = document.getElementById("lina")
+lina.innerHTML = ''
+lina.innerHTML += DrinksDivs[0]
+lina.innerHTML += DrinksDivs[1]
+lina.innerHTML += DrinksDivs[2]
+ //alert("gthh")
+ items = document.getElementsByClassName("item")
+	items[0].style.background = DrinksImages[0]
+  items[0].style.backgroundSize = '100% 100%'
+  items[1].style.background = DrinksImages[1]
+  items[1].style.backgroundSize = '100% 100%'
+  items[2].style.background = DrinksImages[2]
+  items[2].style.backgroundSize = '100% 100%'
+} 
+
+
+
+
   $('div').on('click', function() {
       $(this).toggleClass('show-description');
   });
