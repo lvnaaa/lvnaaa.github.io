@@ -103,6 +103,7 @@ small {
       <li><button onclick=Appetizers()>Appetizers</button></li>
       <li><button onclick=Food()>Food</button></li>
       <li><button onclick=Drinks()>Drinks</button></li>
+	   <li><button onclick=Desserts()>Desserts</button></li>
     </ul>
 
 <h1>Lina's Paradise</h1>
@@ -132,26 +133,41 @@ FoodsImages = [
 				'url("http://forksandfolly.com/wp-content/uploads/2017/07/family-chinese-dinner-at-home-10.jpg")',
 				'url("https://media-cdn.tripadvisor.com/media/photo-s/0b/df/32/28/nyc-chicken-over-rice.jpg")',
 				'url("https://www.thespruceeats.com/thmb/WixIrwNSTTvtWLVC5uMzHTRwK60=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/10104859975_32d03979a3_o-56a143273df78cf77268f39e.jpg")',
+				'url("http://www.fancysushius.com/templates/20121008/images/slider_1.jpg")',
 ]
 
 FoodsDivs = [
        '<div class="item" onclick=this.classList.toggle("show-description")><p>Chicken Teriyaki With Veggie Fried Rice<span class="price">$17</span><br /><small>This chicken teriyaki with veggie fried rice is easier than calling for takeout, and dare i say, better?  make this delicious dinner and serve it up with chopsticks for an evening of family fun!  recipe and post included as part of the popular.</small></p></div>',
       '<div class="item" onclick=this.classList.toggle("show-description")><p>Chicken Over Rice<span class="price">$6</span><br /><small>This utterly faithful recipe perfectly recreates a New York City halal-cart classic: Chicken and Rice with White Sauce . The chicken is marinated with herbs, lemon, and spices; the rice golden; the sauce, as white and creamy as ever.</small></p></div>',
       '<div class="item" onclick=this.classList.toggle("show-description")><p>Chicken Fried Rice with Onions and Peas<span class="price">$15</span><br /><small>Chicken fried rice is a great way to use leftovers. Like all fried rice dishes, chicken fried rice tastes best when using leftover cooked rice.</small></p></div>',
+	 '<div class="item" onclick=this.classList.toggle("show-description")><p>Fancy Sushi<span class="price">$15</span><br /><small>The Sacramento area has some of the best sushi restaurants in the country.</small></p></div>',
 ]
 
 DrinksImages = [
 				'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmZRj36oUeywX6Auo12jMdFxU-3IKdhHxHi0VNOyLqAUm4coy")',
 				'url("https://img.buzzfeed.com/buzzfeed-static/static/2014-12/31/10/campaign_images/webdr07/21-fancy-drinks-to-help-you-forget-2014-2-23716-1420038900-16_dblbig.jpg")',
 				'url("https://cdn2.momjunction.com/wp-content/uploads/2015/04/Mango-Frappe.jpg")',
+				'url("https://s3-eu-west-2.amazonaws.com/theiceco.co.uk/wp-content/uploads/2018/03/Tropical-Fruit-Smoothie-1420x850.jpg")',
 ]
 
 DrinksDivs = [
        '<div class="item" onclick=this.classList.toggle("show-description")><p>French Martini<span class="price">$6</span><br /><small>Our French Martini is one of the best of the new breed (but no Gin, no Vermouth) The mix of raspberry and pineapple flavours is truly delicious.</small></p></div>',
       '<div class="item" onclick=this.classList.toggle("show-description")><p>Raspberry Sgroppino<span class="price">$10</span><br /><small>its a delicious frosty fruit sorbet that really wants to party with you, You can use any flavor of sorbet if raspberry isnt your thing.</small></p></div>',
       '<div class="item" onclick=this.classList.toggle("show-description")><p>Mocktails<span class="price">$6</span><br /><small>Planning drinks for adults is no biggie, but selecting non-alcoholic beverages for your kids and their friends can give you a tough time, You don’t have to worry any more as we have come up with the tasty and easy to make mocktails for kids.</small></p></div>',
+	  '<div class="item" onclick=this.classList.toggle("show-description")><p> Tropical Fruit Smootie<span class="price">$6</span><br /><small>A smoothie recipe with a balance of tropical fruits and juices. Easy to make and great as a quick and healthy breakfast when on the move.</small></p></div>',
 ]
 
+DessertsImages = [
+					'url("https://bakeatmidnite.com/wp-content/uploads/2014/08/white-chocolate-heath-bar-crunch-dessert-43-o.jpg")',
+					'url("https://www.goodlifeeats.com/wp-content/uploads/2014/02/easy-strawberry-cream-dessert_thumb.jpg")',
+					'url("https://i0.wp.com/sixcleversiste.wpengine.com/wp-content/uploads/2017/04/Chocolate-Mousse-Cups-Barbara-Bakes.jpg?resize=750%2C501")',
+					
+]				
+DessertsDivs = [
+	   '<div class="item" onclick=this.classList.toggle("show-description")><p>White Chocolate Heath Bar Crunch<span class="price">$5</span><br /><small>This white chocolate Heath Bar dessert is so easy to make, only your family or guests will think you fussed.</small></p></div>',
+					      '<div class="item" onclick=this.classList.toggle("show-description")><p>Strawberry Fool<span class="price">$10</span><br /><small>Strawberry Fool is an easy fruit dessert recipe made with whipped cream and fresh strawberries – perfect for Valentines Day.</small></p></div>',
+					      '<div class="item" onclick=this.classList.toggle("show-description")><p>Chocolate Pavlova with Nutella and Strawberries<span class="price">$4</span><br /><small>You can’t beat a classic pavlova with crunchy white clouds of meringue and cream, or can you? How about a chocolate pavlova? With Nutella? Now we’re talking! I made this a double decker pavlova purely to have an excuse to fit more Nutella, strawberries and cream between the layers:).</small></p></div>',
+]
 
 function Appetizers() {
 lina = document.getElementById("lina")
@@ -159,7 +175,7 @@ lina.innerHTML = ''
 lina.innerHTML += AppetizersDivs[0]
 lina.innerHTML += AppetizersDivs[1]
 lina.innerHTML += AppetizersDivs[2]
- //alert(hunhbn-)
+ //alert("hunhbn")
  items = document.getElementsByClassName("item")
 	items[0].style.background = AppetizersImages[0]
   items[0].style.backgroundSize = '100% 100%'
@@ -176,7 +192,8 @@ lina.innerHTML = ''
 lina.innerHTML += FoodsDivs[0]
 lina.innerHTML += FoodsDivs[1]
 lina.innerHTML += FoodsDivs[2]
- //alert(fgrg-)
+lina.innerHTML += FoodsDivs[3]
+ //alert("fgrg")
  items = document.getElementsByClassName("item")
 	items[0].style.background = FoodsImages[0]
   items[0].style.backgroundSize = '100% 100%'
@@ -184,6 +201,8 @@ lina.innerHTML += FoodsDivs[2]
   items[1].style.backgroundSize = '100% 100%'
   items[2].style.background = FoodsImages[2]
   items[2].style.backgroundSize = '100% 100%'
+  items[3].style.background = FoodsImages[3]
+  items[3].style.backgroundSize = '100% 100%'
 } 
 
 
@@ -193,6 +212,7 @@ lina.innerHTML = ''
 lina.innerHTML += DrinksDivs[0]
 lina.innerHTML += DrinksDivs[1]
 lina.innerHTML += DrinksDivs[2]
+lina.innerHTML += DrinksDivs[3]
  //alert("gthh")
  items = document.getElementsByClassName("item")
 	items[0].style.background = DrinksImages[0]
@@ -201,9 +221,28 @@ lina.innerHTML += DrinksDivs[2]
   items[1].style.backgroundSize = '100% 100%'
   items[2].style.background = DrinksImages[2]
   items[2].style.backgroundSize = '100% 100%'
+  items[3].style.background = DrinksImages[3]
+  items[3].style.backgroundSize = '100% 100%'
 } 
 
-
+function Desserts() {
+lina = document.getElementById("lina")
+lina.innerHTML = ''
+lina.innerHTML += DessertsDivs[0]
+lina.innerHTML += DessertsDivs[1]
+lina.innerHTML += DessertsDivs[2]
+ //alert("jvugf")
+ items = document.getElementsByClassName("item")
+	items[0].style.background = DessertsImages[0]
+  items[0].style.backgroundSize = '100% 100%'
+  items[1].style.background = DessertsImages[1]
+  items[1].style.backgroundSize = '100% 100%'
+  items[2].style.background = DessertsImages[2]
+  items[2].style.backgroundSize = '100% 100%'
+	
+	
+	
+} 
 
 
   $('div').on('click', function() {
@@ -212,5 +251,3 @@ lina.innerHTML += DrinksDivs[2]
 </script>
 
 </body>
-
-
