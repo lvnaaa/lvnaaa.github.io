@@ -161,12 +161,16 @@ DessertsImages = [
 					'url("https://bakeatmidnite.com/wp-content/uploads/2014/08/white-chocolate-heath-bar-crunch-dessert-43-o.jpg")',
 					'url("https://www.goodlifeeats.com/wp-content/uploads/2014/02/easy-strawberry-cream-dessert_thumb.jpg")',
 					'url("https://i0.wp.com/sixcleversiste.wpengine.com/wp-content/uploads/2017/04/Chocolate-Mousse-Cups-Barbara-Bakes.jpg?resize=750%2C501")',
+					'url("https://www.preparedpantry.com/blog/wp-content/uploads/2016/09/brownie-with-chubby-cherry-and-whipped-cream.jpg")',
+					'url("https://i.pinimg.com/originals/73/ae/f0/73aef04c6b516df848f674b7baf74ee2.jpg")',
 					
 ]				
 DessertsDivs = [
 	   '<div class="item" onclick=this.classList.toggle("show-description")><p>White Chocolate Heath Bar Crunch<span class="price">$5</span><br /><small>This white chocolate Heath Bar dessert is so easy to make, only your family or guests will think you fussed.</small></p></div>',
 					      '<div class="item" onclick=this.classList.toggle("show-description")><p>Strawberry Fool<span class="price">$10</span><br /><small>Strawberry Fool is an easy fruit dessert recipe made with whipped cream and fresh strawberries – perfect for Valentines Day.</small></p></div>',
 					      '<div class="item" onclick=this.classList.toggle("show-description")><p>Chocolate Pavlova with Nutella and Strawberries<span class="price">$4</span><br /><small>You can’t beat a classic pavlova with crunchy white clouds of meringue and cream, or can you? How about a chocolate pavlova? With Nutella? Now we’re talking! I made this a double decker pavlova purely to have an excuse to fit more Nutella, strawberries and cream between the layers:).</small></p></div>',
+						      '<div class="item" onclick=this.classList.toggle("show-description")><p>cious Desserts<span class="price">$4</span><br /><small>Lemon meringue mini cake, a lovely way to present an old time classic.</small></p></div>',
+						      '<div class="item" onclick=this.classList.toggle("show-description")><p>Chocolate cake with whipped cream<span class="price">$4</span><br /><small>Saturday was fun. The store was packed and I spent most of the day mingling with customers and making whipped cream. Those Chubby Cherry Brownies were great but what they went crazy over was the whipped cream toppings, People love to try new things, scrumptious things, and especially if they can choose. We made eight kinds of whipped cream–no vanilla–and encouraged people to try a dab of this and a spoon of that.  Some folks tried all eight. They loved it.</small></p></div>',
 ]
 
 function Appetizers() {
@@ -231,6 +235,8 @@ lina.innerHTML = ''
 lina.innerHTML += DessertsDivs[0]
 lina.innerHTML += DessertsDivs[1]
 lina.innerHTML += DessertsDivs[2]
+lina.innerHTML += DessertsDivs[3]
+lina.innerHTML += DessertsDivs[4]
  //alert("jvugf")
  items = document.getElementsByClassName("item")
 	items[0].style.background = DessertsImages[0]
@@ -239,7 +245,10 @@ lina.innerHTML += DessertsDivs[2]
   items[1].style.backgroundSize = '100% 100%'
   items[2].style.background = DessertsImages[2]
   items[2].style.backgroundSize = '100% 100%'
-	
+  items[3].style.background = DessertsImages[3]
+  items[3].style.backgroundSize = '100% 100%'
+  items[4].style.background = DessertsImages[4]
+  items[4].style.backgroundSize = '100% 100%'
 	
 	
 } 
