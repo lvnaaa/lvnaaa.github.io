@@ -7,7 +7,7 @@
 
 body {
   line-height: 1.4;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Srisakdi', cursive;
   font-size: 18px;
   letter-spacing: 0.5px;
   font-size: 15px;
@@ -64,7 +64,7 @@ Responsive media queries
 
 .navbar-brand {
   font-size: 36px;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Lobster', cursive;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -112,16 +112,18 @@ Responsive media queries
   padding: 15px 40px;
   color: #ffd1dc;
   margin-top: 170px;
+ 
 }
 
 .banner-text h2, .banner-text p {
   font-size: 40px;
   font-weight: 400;
   font-family: 'Questrial', sans-serif;
+  font-family:'Indie Flower', cursive;
 }
 
 .banner-text h2 span {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Germania One', cursive;
 }
 
 .overlay-detail {
@@ -142,7 +144,7 @@ Responsive media queries
 }
 
 .deco {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Permanent Marker', cursive;
 }
 
 #about {
